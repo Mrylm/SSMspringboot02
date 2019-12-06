@@ -1,0 +1,25 @@
+##服务器配置
+server:
+  port: 9191
+  servlet:
+    path: /springboot
+
+##logback
+logging:
+  config: classpath:logback.xml
+
+##spring mvc
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  resources:
+    static-locations:
+      - classpath:/META-INF/resources/
+      - classpath:/resources/
+      - classpath:/static/
+      - classpath:/public/
+      - classpath:/img/
+      - classpath:/js/
+

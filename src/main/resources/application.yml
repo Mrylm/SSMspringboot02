@@ -1,0 +1,8 @@
+##切换环境
+spring:
+  profiles:
+    active: dev   #加载application-dev.yml文件
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp

@@ -1,0 +1,46 @@
+##服务器配置
+server:
+  port: 9090
+  servlet:
+    path: /sell
+
+##logback
+logging:
+  config: classpath:logback.xml
+
+##spring mvc
+spring:
+  resources:  #静态资源
+    static-locations:
+    - classpath:/META-INF/resources/
+    - classpath:/resources/
+    - classpath:/static/
+    - classpath:/public/
+    - classpath:/img/
+    - classpath:/js/
+  datasource:
+    name: druid
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/sell?characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    mvc:
+      view:
+        prefix: /
+        suffix: .jsp
+
+#整合mybatis
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+  config-location: classpath:mybatis/mybatisConfig.xml
+  type-aliases-package: com.henu.ssm.bean
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+
+
+
